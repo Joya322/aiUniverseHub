@@ -12,13 +12,201 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header>
-      <h2>AI Universe Hub</h2>
-      <button>Sort By Date</button>
+    <!-- header start -->
+    <header class="text-center">
+      <h2 class="text-[rgb(17,17,17)] text-4xl font-semibold py-8">
+        AI Universe Hub
+      </h2>
+      <button class="btn btn-error text-white">Sort By Date</button>
     </header>
-    <main></main>
+
+    <!-- main start -->
+    <main class="my-10 max-w-[1300px] mx-auto flex flex-col items-center">
+      <!-- cards section start -->
+      <section class="flex flex-col items-center justify-center">
+        <div
+          id="cards"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+
+        <!-- <div class="card"> -->
+            <!-- card figure -->
+              <!-- <figure class="p-5">
+                <img
+                  class="rounded-2xl"
+                  src="${element.image}"
+                />
+              </figure> -->
+
+              <!-- card body -->
+              <!-- <div class="card-body pt-1 gap-0"> -->
+                <!-- card title -->
+                <!-- <h2 class="card-title">Features</h2> -->
+                <!-- list items -->
+                <!-- <ol id="list" class="list-inside list-decimal mt-4"> -->
+                  
+                <!-- </ol> -->
+
+                <!-- horizontal line -->
+                <!-- <div
+                  class="w-[320px] h-0 border border-solid border-[rgba(17,17,17,0.2)] my-6"
+                ></div> -->
+
+                <!-- figure Details Container -->
+                <!-- <div
+                  id="figureDetailsContainer"
+                  class="flex flex-row justify-between items-center"
+                > -->
+                  <!-- figureDetails -->
+                  <!-- <div id="figureDetails" class="flex flex-col gap-4"> -->
+                    <!-- figure name -->
+                    <!-- <h4 id="figureName" class="text-2xl font-semibold">
+                      ${element.name}
+                    </h4> -->
+                    <!-- figure date -->
+                    <!-- <div
+                      id="figureDateContainer"
+                      class="flex flex-row justify-center items-center gap-1"
+                    >
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <p>${element.published_in}</p>
+                    </div> -->
+                  <!-- </div> -->
+                  <!-- <button
+                    onclick="arrowModal.showModal()"
+                    class="btn w-[50px] h-[50px] bg-[rgb(254,247,247)] flex justify-center items-center rounded-full hover:bg-[rgb(235,87,87,0.4)]"
+                  >
+                    <i class="fa-solid fa-arrow-right text-[rgb(235,87,87)]"></i>
+                  </button> -->
+                <!-- </div> -->
+                
+              </div>
+        </div>
+          <!-- card will be here... -->
+        </div>
+
+        <!-- see more button -->
+        <div id="seeMoreButton" class="mt-5">
+          <button class="btn btn-error text-white">See More</button>
+        </div>
+      </section>
+
+      <!-- modal -->
+      <dialog id="arrowModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box w-11/12 max-w-5xl">
+          <!-- modal cards -->
+          <div id="modalCards" class="flex flex-row gap-5">
+            <!--modal card1 -->
+            <div
+              class="card shadow-xl w-1/2 bg-primary text-primary-content border border-[rgba(235,87,87)] bg-[rgba(235,87,87,0.05)]"
+            >
+              <div class="card-body text-[rgb(17,17,17)]">
+                <h2 class="card-title">
+                  Card ChatGPT is an AI-powered chatbot platform that uses
+                  OpenAI's GPT technology to simulate human conversation.
+                </h2>
+                <!-- small blocks -->
+                <div class="flex flex-row gap-4 my-6">
+                  <div
+                    class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
+                  >
+                    <p class="text-[rgb(3,163,10)] font-extrabold">
+                      $10/ <br />month Basic
+                    </p>
+                  </div>
+                  <div
+                    class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
+                  >
+                    <p class="text-[rgb(242,137,39)] font-extrabold">
+                      $50/ <br />month Pro
+                    </p>
+                  </div>
+                  <div
+                    class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
+                  >
+                    <p class="text-[rgb(235,87,87)] font-extrabold">
+                      Contact us Enterprise
+                    </p>
+                  </div>
+                </div>
+                <!-- features and integrations -->
+                <div
+                  id="featuresIntegrations"
+                  class="flex flex-row justify-between"
+                >
+                  <!-- modal features -->
+                  <div id="modalFeatures">
+                    <h4 class="text-2xl mb-4 font-semibold">Features</h4>
+                    <ul class="list list-inside list-disc">
+                      <li>Customizable responses</li>
+                      <li>Multilingual support</li>
+                      <li>Seamless integration</li>
+                    </ul>
+                  </div>
+
+                  <!-- modal integration -->
+                  <div id="modalIntegration">
+                    <h4 class="text-2xl mb-4 font-semibold">Integration</h4>
+                    <ul class="list list-inside list-disc">
+                      <li>FB Messenger</li>
+                      <li>Slack</li>
+                      <li>Telegram</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--modal card2 -->
+            <div
+              class="card w-1/2 bg-base-100 shadow-xl border border-[rgb(231,231,231)]"
+            >
+              <figure class="p-6">
+                <img
+                  class="rounded-2xl"
+                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  alt="Shoes"
+                />
+              </figure>
+              <div class="card-body items-center text-center pt-0">
+                <h2
+                  class="card-title text-2xl font-semibold text-[rgb(17,17,17)]"
+                >
+                  Hi, how are you doing today?
+                </h2>
+                <p class="text-[rgb(88,88,88)]">
+                  I'm doing well, thank you for asking. How can I assist you
+                  today?
+                </p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
     <footer></footer>
+
+    <!-- js files -->
+    <script src="./js/card.js"></script>
   </body>
 </html>
