@@ -73,21 +73,28 @@
                     class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
                   >
                     <p class="text-[rgb(3,163,10)] font-extrabold">
-                      $10/ <br />month Basic
+                      <span id="type1Price"></span><br /><span
+                        id="type1Plan"
+                      ></span>
                     </p>
                   </div>
                   <div
                     class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
                   >
                     <p class="text-[rgb(242,137,39)] font-extrabold">
-                      $50/ <br />month Pro
+                      <span id="type2Price"></span><br /><span
+                        id="type2Plan"
+                      ></span>
                     </p>
                   </div>
                   <div
                     class="payment bg-white rounded-2xl content-center h-[100px] w-[120px] flex justify-center items-center p-10 text-center"
                   >
-                    <p class="text-[rgb(235,87,87)] font-extrabold">
-                      Contact us Enterprise
+                    <p
+                      id="enterprisePrice"
+                      class="text-[rgb(235,87,87)] font-extrabold"
+                    >
+                      <span id="type3Price"></span> <span id="type3Plan"></span>
                     </p>
                   </div>
                 </div>
@@ -96,11 +103,13 @@
                   id="featuresIntegrations"
                   class="flex flex-row justify-between"
                 >
-               
                   <!-- modal features -->
                   <div id="modalFeatures">
                     <h4 class="text-2xl mb-4 font-semibold">Features</h4>
-                    <ul id="listContainerFeatures" class="list-inside list-disc">
+                    <ul
+                      id="listContainerFeatures"
+                      class="list-inside list-disc"
+                    >
                       <!-- <li>Customizable responses</li>
                       <li>Multilingual support</li>
                       <li>Seamless integration</li> -->
@@ -110,7 +119,10 @@
                   <!-- modal integration -->
                   <div id="modalIntegration">
                     <h4 class="text-2xl mb-4 font-semibold">Integration</h4>
-                    <ul id="listContainerIntegrations" class="list-inside list-disc">
+                    <ul
+                      id="listContainerIntegrations"
+                      class="list-inside list-disc"
+                    >
                       <!-- <li>FB Messenger</li>
                       <li>Slack</li>
                       <li>Telegram</li> -->
@@ -124,13 +136,7 @@
             <div
               class="card w-1/2 bg-base-100 shadow-xl border border-[rgb(231,231,231)]"
             >
-              <figure class="p-6">
-                <img
-                  class="rounded-2xl"
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure>
+              <figure id="singleImage" class="p-6"></figure>
               <div class="card-body items-center text-center pt-0">
                 <h2
                   class="card-title text-2xl font-semibold text-[rgb(17,17,17)]"

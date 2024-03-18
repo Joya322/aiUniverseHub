@@ -98,6 +98,46 @@ const showSingleDataDetails = (singleDataOfData) => {
   // set innerText of description element
   descriptionElement.innerText = singleDataOfData.description;
 
+  // get type1 Price element
+  const type1Price = document.getElementById("type1Price");
+
+  // get type1 plan element
+  const type1Plan = document.getElementById("type1Plan");
+
+  // get type2 Price element
+  const type2Price = document.getElementById("type2Price");
+
+  // get type2 plan element
+  const type2Plan = document.getElementById("type2Plan");
+
+  // get type3 Price element
+  const type3Price = document.getElementById("type3Price");
+
+  // get type1 plan element
+  const type3Plan = document.getElementById("type3Plan");
+
+  // console.log(type1Price, type1Plan, type2Price,type2Plan, type3Price, type3Plan);
+  const priceArray = singleDataOfData.pricing;
+
+  // set type1 price
+  type1Price.innerText = priceArray[0].price;
+
+  // set type1 plan
+  type1Plan.innerText = priceArray[0].plan;
+
+  // set type2 price
+  type2Price.innerText = priceArray[1].price;
+
+  // set type2 plan
+  type2Plan.innerText = priceArray[1].plan;
+
+  // set type3 price
+  type3Price.innerText = priceArray[2].price;
+
+  // set type3 plan
+  type3Plan.innerText = priceArray[2].plan;
+  // console.log(ty);
+
   // get list container of features
   const listContainerFeatures = document.getElementById(
     "listContainerFeatures"
@@ -129,7 +169,6 @@ const showSingleDataDetails = (singleDataOfData) => {
 
   const integrations = singleDataOfData.integrations;
 
-  // console.log(listContainerIntegrations);
   // const li = document.createElement("li");
   // li.classList = `pl-5`;
 
@@ -137,7 +176,16 @@ const showSingleDataDetails = (singleDataOfData) => {
     .map((integration) => `<li><a>${integration}</a></li>`)
     .join("")}`;
 
-  listContainerIntegrations.innerHTML += listContainerFeaturesInnerHTML;
+  listContainerIntegrations.innerHTML += listContainerIntegrationsInnerHTML;
+
+  console.log(singleDataOfData);
+
+  // get image element
+  const figure = document.getElementById("singleImage");
+
+  figure.innerHTML = `
+    <img class="rounded-2xl" src="${singleDataOfData.image_link[0]}" alt="Image" />
+  `;
   arrowModal.showModal();
 };
 
