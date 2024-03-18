@@ -1,26 +1,41 @@
-const loadData = async () => {
+const loadData = async (isSeeMore) => {
+  toggleLoadingSpinner(true);
   const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`);
   const datum = await res.json();
   const data = datum.data.tools;
-  displayData(data);
+  displayData(data, isSeeMore);
 };
 
-const displayData = (data) => {
+const displayData = (data, isSeeMore) => {
+  // get see more button
+  const seeMoreButton = document.getElementById("seeMoreButton");
+  if (data.length > 6 && isSeeMore === false) {
+    seeMoreButton.classList.remove("hidden");
+  }
+  else {
+    seeMoreButton.classList.add("hidden");
+  }
+  
+  if (isSeeMore === false) {
+    data = data.slice(0, 6);
+    // console.log(data.length);
+  }
+
   //   // 1. get card container named cards
   const cards = document.getElementById("cards");
+  cards.textContent = "";
   data.forEach((element) => {
     // 2. create a card element
-    //const card = document.createElement("div");
-    // card.classList = ``;
+    const card = document.createElement("div");
+    card.classList = `card w-96 bg-base-100 shadow-xl border border-solid border-[rgba(17,17,17,0.1)] rounded-2xl`;
 
     // 3. set innerHTML
-      const cardHTML = `
-        <div class="card w-96 bg-base-100 shadow-xl border border-solid border-[rgba(17,17,17,0.1)] rounded-2xl">
+       card.innerHTML = `
           <!-- card figure -->
-          <figure class="p-5">
+          <figure class="p-5 flex justify-center items-center">
             <img
-                class="rounded-2xl"
-                src="${element.image}"
+                class="rounded-2xl w-[340px] h-[200px] border border-[rgba(17,17,17,0.2)]"
+                src="${element.image}" alt="Card Image"
             />
           </figure>
 
@@ -58,12 +73,27 @@ const displayData = (data) => {
             </div>
 
           </div>
-        </div>
       `;
-      cards.innerHTML += cardHTML;
+      cards.appendChild(card);
     
-    // console.log(element);
   });
+
+  toggleLoadingSpinner(false);
 };
 
-loadData();
+const seeMore = () => {
+  loadData(true);
+}
+
+const toggleLoadingSpinner = (isLoading) => {
+  // get loading spinner
+  const loadingSpinner = document.getElementById("loadingSpinner");
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+  }
+  else {
+    loadingSpinner.classList.add("hidden");
+  }
+}
+
+loadData(false);
